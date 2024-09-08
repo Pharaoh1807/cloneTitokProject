@@ -2,12 +2,10 @@
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Clone Titok Project
-        </p>
-        
-      </header>
+        <h1>
+          Clone Titok project
+        </h1>
+      
     </div>
   )
 }
