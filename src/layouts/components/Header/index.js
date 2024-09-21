@@ -9,6 +9,7 @@ import {
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react';
 import Upload from '~/pages/Upload';
@@ -23,6 +24,7 @@ import Menu from '../Popper/Menu';
 import { UploadIcon } from '~/components/Icons';
 import Image from '~/components/Image';
 import Search from '../Search';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -47,9 +49,7 @@ function Header() {
     const currentUser = true;
 
     //Handel Logic
-    const handelMenuChange = (menuItem) => {
-        console.log(menuItem);
-    };
+    const handelMenuChange = (menuItem) => {};
 
     const userMenu = [
         { icon: <FontAwesomeIcon icon={faUser} />, title: 'View profile', to: '/#hoaaa' },
@@ -63,9 +63,10 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images} alt="Tiktok" />
-                </div>
+                </Link>
+
                 <Search />
 
                 <div className={cx('actions')}>
